@@ -1,6 +1,6 @@
 import React from "react";
 
-export const BellIcon = (className: string) => {
+export const BellIcon = ({ className }: { className: string }) => {
   return (
     <svg
       className={className}
