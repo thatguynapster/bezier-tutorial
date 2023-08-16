@@ -24,8 +24,9 @@ const TopNav = ({ onSearch }: { onSearch: (term: string) => void }) => {
         <FormGroup
           type={"text"}
           id={"pageSearch"}
-          className="text-gray-700 w-full rounded-md pl-4 py-3 px-4 cursor-pointer"
+          className="bg-[#fafafa] text-gray-700 w-full rounded-md pl-12 py-3 cursor-pointer"
           prependIcon={<SearchIcon className="w-32 text-gray-600" />}
+          placeholder="Search artists, projects"
           onAppendClicked={() => {}}
           prependIconContainerClass="w-10 pl-4"
           onValueChanged={(ev: any) => {
