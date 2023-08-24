@@ -1,38 +1,20 @@
 import React, { useEffect, useState } from "react";
-import FormGroup from "./formgroup";
-import { BellIcon, SearchIcon } from "./icons";
 import Image from "next/image";
+
 import { useDebouncer } from "@/utils";
+import { BellIcon } from "./icons";
+import Search from "./search";
 
-const TopNav = ({ onSearch }: { onSearch: (term: string) => void }) => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const debounceQuery = useDebouncer(searchTerm, 1500);
-
-  // TODO hit an actual route
-  useEffect(() => {
-    let mounted = true;
-    onSearch(debounceQuery);
-
-    return () => {
-      mounted = false;
-    };
-  }, [debounceQuery]);
-
+const TopNav = () => {
   return (
     <div className="flex justify-between p-8">
       <div className="lg:flex hidden cursor-pointer w-[741px]">
-        <FormGroup
-          type={"text"}
-          id={"pageSearch"}
-          className="bg-[#fafafa] text-gray-700 w-full rounded-md pl-12 py-3 cursor-pointer"
-          prependIcon={<SearchIcon className="w-32 text-gray-600" />}
-          placeholder="Search artists, projects"
-          onAppendClicked={() => {}}
-          prependIconContainerClass="w-10 pl-4"
-          onValueChanged={(ev: any) => {
-            setSearchTerm(ev.target.value);
+        <Search
+          value={""}
+          placeholder="Search"
+          onSearch={(query: string) => {
+            console.log(query);
           }}
-          onFocusOut={() => {}}
         />
       </div>
 

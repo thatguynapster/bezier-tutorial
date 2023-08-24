@@ -7,11 +7,7 @@ export default function Home() {
       <Sidebar />
 
       <div className="w-full">
-        <TopNav
-          onSearch={(searchTerm: string) => {
-            alert(searchTerm);
-          }}
-        />
+        <TopNav />
       </div>
     </div>
   );
